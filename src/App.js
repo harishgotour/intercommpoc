@@ -1,7 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import Axios from './Axios';
 
 function App() {
+
+  const fetchAPI = () => {
+    Axios.get('https://jsonplaceholder.typicode.com/todos/1').then(() => {
+      debugger
+    }).catch((error) => {
+      debugger
+    })
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -9,14 +18,13 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
+        <button
+          onClick={fetchAPI}
           className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+          // href="https://reactjs.org"
         >
           Learn React
-        </a>
+        </button>
       </header>
     </div>
   );
